@@ -34,7 +34,7 @@ except ImportError as e:
     st.error(f"モジュールのインポートに失敗しました: {e}")
     st.stop()
 
-st.title("Streamlitでレポジトリ内のpyを実行")
+st.title("伝票作成アプリ")
 
 # ファイルアップローダー
 uploaded_file = st.file_uploader("ファイルをアップロードしてください")
