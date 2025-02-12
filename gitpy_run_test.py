@@ -50,7 +50,7 @@ if uploaded_file is not None:
         
         # xl_des モジュールの関数を実行
         if hasattr(xl_des, 'main'):
-            xl_des.main(uproaded_file)
+            xl_des.main(uploaded_file)
         else:
             st.warning("xl_des モジュールに 'main' 関数が見つかりません。")
 
