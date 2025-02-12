@@ -82,6 +82,7 @@ def main (uploaded_file):
 
             # ここでwb_dempを使って処理を行う
             # Excelファイルへの書き込み
+            ws_demp["AC17"] = "現場名："
             ws_demp["AH3"] = syukka
             ws_demp["AB4"] = konpou + "梱包"
 
