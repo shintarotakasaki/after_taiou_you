@@ -13,7 +13,7 @@ import shutil
 
 # コメントアウトされたコード
 
-def xl_data_upload(after_xl):
+def xl_data_upload(uploaded_file):
     values = []
     
     #after_xl = st.file_uploader("アフター申請書エクセルをアップロードしてください")
@@ -44,14 +44,14 @@ def xl_data_upload(after_xl):
             st.write("エクセルファイル(.xlsx)をアップロードしてください")
             st.stop()
 
-def afterxl_dataget ():
+def main (uproaded_file):
     """
     GitHubからExcelファイルをダウンロードし、開く関数。
     """
     values = ""
     xlpoints = ["AC9-1","AC9","AM9","AC11","AC13","AC15","AC19-1","AC19","A11","S11"]
     
-    after_xl = st.file_uploader("アフター申請書エクセルをアップロードしてください")
+    #after_xl = st.file_uploader("アフター申請書エクセルをアップロードしてください")
     
     if after_xl is not None:
         values = xl_data_upload(after_xl)
@@ -130,5 +130,5 @@ def afterxl_dataget ():
             st.error(f"エラーが発生しました: {str(e)}")
 
 if __name__ == "__main__":
-    afterxl_dataget()
+    main()
 # ... (他のコードは省略)
