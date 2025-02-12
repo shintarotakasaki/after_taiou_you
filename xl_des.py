@@ -59,7 +59,8 @@ def main (uploaded_file):
     else:
         st.write("エクセルファイル(.xlsx)をアップロードしてください")
         st.stop()
-        
+
+    genba = "現場名："
     syukka = st.date_input("出荷日を入力してください")
     konpou = st.selectbox("梱包数を選択してください",['1','2','3','4','5','それ以上'])
     if konpou =='それ以上':
@@ -82,7 +83,7 @@ def main (uploaded_file):
 
             # ここでwb_dempを使って処理を行う
             # Excelファイルへの書き込み
-            ws_demp["AC17"] = "現場名："
+            ws_demp["AC17"] = genba
             ws_demp["AH3"] = syukka
             ws_demp["AB4"] = konpou + "梱包"
 
