@@ -43,10 +43,6 @@ def xl_data_upload(uploaded_file):
             st.write("エクセルファイル(.xlsx)をアップロードしてください")
             st.stop()
             
-        syukka = st.date_input("出荷日を入力してください")
-        konpou = st.selectbox("梱包数を選択してください",['1','2','3','4','5','それ以上'])
-        if konpou =='それ以上':
-            konpou = st.text_input('梱包数を入力してください(半角数字)')
 
 def main (uploaded_file):
     """
@@ -59,13 +55,16 @@ def main (uploaded_file):
     
     if uploaded_file is not None:
         values = xl_data_upload(uploaded_file)
-        syukka = xl_data_upload(uploaded_file)
-        konpou = xl_data_upload(uploaded_file)
     
     else:
         st.write("エクセルファイル(.xlsx)をアップロードしてください")
         st.stop()
-    
+        
+    syukka = st.date_input("出荷日を入力してください")
+    konpou = st.selectbox("梱包数を選択してください",['1','2','3','4','5','それ以上'])
+    if konpou =='それ以上':
+        konpou = st.text_input('梱包数を入力してください(半角数字)')
+        
     if st.button("Excelファイルを生成する"):
         github_url = "https://github.com/shintarotakasaki/excel3/raw/main/伝票(規格品)_ラベル_指示書.xlsm"
         # ファイルをダウンロードして一時ファイルとして保存
