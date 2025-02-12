@@ -43,7 +43,7 @@ def xl_data_upload(uploaded_file):
             st.write("エクセルファイル(.xlsx)をアップロードしてください")
             st.stop()
 
-def main (uproaded_file):
+def main (uploaded_file):
     """
     GitHubからExcelファイルをダウンロードし、開く関数。
     """
