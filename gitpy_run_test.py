@@ -43,14 +43,14 @@ if uploaded_file is not None:
     file_mime = uploaded_file.type
 
     if file_mime == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
-        file = BytesIO(uploaded_file.getvalue())
-        wb = load_workbook(filename=file)
-        sheet = wb.active
-        st.write(f"シートタイトル: {sheet.title}")
+        #file = BytesIO(uploaded_file.getvalue())
+        #wb = load_workbook(filename=file)
+        #sheet = wb.active
+        #st.write(f"シートタイトル: {sheet.title}")
         
         # xl_des モジュールの関数を実行
         if hasattr(xl_des, 'main'):
-            xl_des.main(sheet)
+            xl_des.main(uproaded_file)
         else:
             st.warning("xl_des モジュールに 'main' 関数が見つかりません。")
 
