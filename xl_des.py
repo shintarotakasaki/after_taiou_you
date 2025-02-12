@@ -18,17 +18,16 @@ def xl_data_upload(uploaded_file):
     
     #after_xl = st.file_uploader("アフター申請書エクセルをアップロードしてください")
 
-    if after_xl is not None:
-        file_mime = after_xl.type
+    if uploaded_file is not None:
+        file_mime = uploaded_file.type
         if file_mime == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
             try:
-                file = BytesIO(after_xl.getvalue())
+                file = BytesIO(uploaded_file.getvalue())
                 wb = load_workbook(filename=file)
                 sheet = wb.active
                 rects = ["G19","G20","L15","N20","G21","N21","G23","Q23","H28","AB34"]
 
                 for rect in rects:
-                        
                     values.append(sheet[rect].value)
 
                 for rect, value in zip(rects, values):
@@ -53,8 +52,8 @@ def main (uproaded_file):
     
     #after_xl = st.file_uploader("アフター申請書エクセルをアップロードしてください")
     
-    if after_xl is not None:
-        values = xl_data_upload(after_xl)
+    if uploaded_file is not None:
+        values = xl_data_upload(uploaded_file)
     
     else:
         st.write("エクセルファイル(.xlsx)をアップロードしてください")
